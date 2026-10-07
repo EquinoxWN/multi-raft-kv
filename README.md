@@ -57,6 +57,12 @@ _Steps 1 and 2 are built and tested (M1); the rest is on the [roadmap](#roadmap)
 5. Each node batches heartbeats for all of its Raft groups, keeping thousands of groups cheap.
 6. A deterministic simulator plus Porcupine verify linearizability under partitions, crashes and region moves.
 
+## Who it helps
+
+- **Who:** Engineers learning how sharded, replicated stores such as TiKV or CockroachDB stay correct.
+- **The problem:** Splitting data across Raft groups adds stale routing and split races that are hard to reason about.
+- **How to use it:** Read the region, split and epoch code built on etcd's Raft library, and run the deterministic simulator and Porcupine linearizability checks.
+
 ## Tech stack
 
 | Area | In M1 | Planned |
